@@ -14,6 +14,20 @@ function duplicates(arr){
 }
 console.log(duplicates(names));
 
+//...OR...Removing duplicates using the reduce method
+
+function removingDuplicates(array){
+    return arr.sort().reduce(function(accumulator, currentValue){
+      const length = accumulator.length
+      if(length === 0 || accumulator[length - 1] !== currentValue){
+        accumulator.push(currentValue)
+      }
+      return accumulator
+    }, [])
+}
+console.log(removingDuplicates(names))
+
+
 //...OR...(using the filter method)...
 
 function duplicates(arr){
@@ -32,6 +46,7 @@ function duplicates(arr){
 console.log(duplicates(names));
 
 //...OR...(using the built in javascript object set method)...
+console.log(new Set(names))
 
 function duplicates(arr){
     return Array.from(Set(arr));
